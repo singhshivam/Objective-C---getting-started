@@ -31,5 +31,20 @@
                         ];
 }
 
+// this function was declared in .h file
+-(IBAction)quoteButtonTapped:(id)sender {
+    // 1 - Get number of rows in array
+    // Calling a method in Objective C:
+    // [object_of_the_method method]
+    int array_tot = [self.myQuotes count];
+    // 2 - Get random index
+    int index = (arc4random() % array_tot);
+    // 3 - Get the quote string for the index
+    NSString *my_quote = self.myQuotes[index];
+    // 4 - Display the quote in the text view
+    // syntax similar to printf
+    self.quoteText.text = [NSString stringWithFormat:@"Quote:\n\n%@",  my_quote];
+}
+
 
 @end

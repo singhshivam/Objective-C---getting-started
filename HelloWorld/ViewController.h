@@ -24,5 +24,13 @@
 // Therefore, use NSMutableArray
 @property (nonatomic, strong) NSMutableArray *movieQuotes;
 
-@end
+// IBOutlet is a special keyword that means quoteText can be linked to an
+// interface element on the XIB file so the ViewController can access/update
+// the properties of the interface element.
+@property (nonatomic, strong) IBOutlet UITextView *quoteText;
 
+// declare a method that will be implemented in this class
+// (return value)FunctionName:(type of parameter)name of parameter
+- (IBAction)quoteButtonTapped:(id)sender;
+
+@end
