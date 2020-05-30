@@ -15,40 +15,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Lorem ipsum dolor " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="SKq-Rp-676">
-                                <rect key="frame" x="87" y="384" width="240" height="128"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="..." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fQJ-t8-r4n">
+                                <rect key="frame" x="30" y="363" width="354" height="170"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="170" id="LXh-bR-tVU"/>
+                                    <constraint firstAttribute="width" constant="354" id="dMP-Te-YWf"/>
+                                </constraints>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5xT-6Z-t3a">
-                                <rect key="frame" x="161" y="542" width="92" height="30"/>
-                                <state key="normal" title="Show Quotes"/>
+                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1hc-ZU-nss">
+                                <rect key="frame" x="161" y="543" width="92" height="30"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <state key="normal" title="Show Quotes">
+                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                </state>
                                 <connections>
-                                    <action selector="quoteButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WlU-Ku-qa9"/>
+                                    <action selector="quoteButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xj2-Be-DUO"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5xT-6Z-t3a" secondAttribute="trailing" constant="161" id="1DI-Qa-OLL"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SKq-Rp-676" secondAttribute="trailing" constant="87" id="3rG-jP-GFp"/>
-                            <constraint firstItem="5xT-6Z-t3a" firstAttribute="top" secondItem="SKq-Rp-676" secondAttribute="bottom" constant="30" id="byu-p5-aHd"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="SKq-Rp-676" secondAttribute="bottom" constant="350" id="cWy-WS-kdQ"/>
-                            <constraint firstItem="SKq-Rp-676" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="87" id="eTS-nC-Q2b"/>
-                            <constraint firstItem="SKq-Rp-676" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="340" id="jmD-GM-vog"/>
-                            <constraint firstItem="5xT-6Z-t3a" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="161" id="wKn-Od-caP"/>
+                            <constraint firstItem="1hc-ZU-nss" firstAttribute="top" secondItem="fQJ-t8-r4n" secondAttribute="bottom" constant="10" id="DJe-Yc-Zcd"/>
+                            <constraint firstItem="fQJ-t8-r4n" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="GID-ME-bFc"/>
+                            <constraint firstItem="1hc-ZU-nss" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="W1p-AS-zZe"/>
+                            <constraint firstItem="fQJ-t8-r4n" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dqW-fk-lNM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="quoteText" destination="SKq-Rp-676" id="8Wg-66-gcG"/>
+                        <outlet property="quoteText" destination="fQJ-t8-r4n" id="MIO-GZ-MNh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="122" y="133"/>
+            <point key="canvasLocation" x="121.73913043478262" y="132.58928571428572"/>
         </scene>
     </scenes>
 </document>
