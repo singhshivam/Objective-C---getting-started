@@ -9,7 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
-
+// To declare a property:
+// 1. add @property keyword
+// 2. list property attributes
+@property (nonatomic, strong) NSArray *myQuotes;
 
 @end
 
