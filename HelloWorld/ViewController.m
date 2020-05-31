@@ -66,8 +66,23 @@
             int index = (arc4random() % array_tot);
             // 2.6 - get the quote string for the index
             NSString *quote = filteredArray[index][@"quote"];
-            self.quoteText.text = [NSString stringWithFormat:@"Movie Quote:\n\n%@",  quote];
-        } else {
+            // 2.7 - Check if there is a source
+            NSString *source = [[filteredArray objectAtIndex:index] valueForKey:@"source"];
+            if (![source length] == 0) {
+                quote = [NSString stringWithFormat:@"%@\n\n(%@)",  quote, source];
+            }
+            // 2.8 - Customize quote based on category
+            if ([selectedCategory isEqualToString:@"classic"]) {
+                quote = [NSString stringWithFormat:@"From Classic Movie\n\n%@",  quote];
+            } else {
+                quote = [NSString stringWithFormat:@"Movie Quote:\n\n%@",  quote];
+            }
+            if ([source hasPrefix:@"Harry"]) {
+                quote = [NSString stringWithFormat:@"HARRY ROCKS!!\n\n%@",  quote];
+            }
+            // 2.9 - Display quote
+            self.quoteText.text = quote;
+            } else {
             self.quoteText.text = [NSString stringWithFormat:@"No quotes to display."];
         }
     }
