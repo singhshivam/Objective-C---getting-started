@@ -29,6 +29,8 @@
 // the properties of the interface element.
 @property (nonatomic, strong) IBOutlet UITextView *quoteText;
 
+@property (nonatomic, strong) IBOutlet UISegmentedControl *quoteOpt;
+
 // declare a method that will be implemented in this class
 // (return value)FunctionName:(type of parameter)name of parameter
 - (IBAction)quoteButtonTapped:(id)sender;

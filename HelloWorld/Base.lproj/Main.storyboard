@@ -27,7 +27,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button contentMode="center" semanticContentAttribute="spatial" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1hc-ZU-nss">
-                                <rect key="frame" x="151" y="543" width="112" height="38"/>
+                                <rect key="frame" x="151" y="543" width="112" height="37"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
                                 <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
@@ -38,9 +38,19 @@
                                     <action selector="quoteButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xj2-Be-DUO"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="qac-Pc-Fbd">
+                                <rect key="frame" x="72" y="630" width="253" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Classic"/>
+                                    <segment title="Modern"/>
+                                    <segment title="Mine"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="qac-Pc-Fbd" firstAttribute="top" secondItem="1hc-ZU-nss" secondAttribute="bottom" constant="50" id="2Z9-1p-J8T"/>
                             <constraint firstItem="1hc-ZU-nss" firstAttribute="top" secondItem="fQJ-t8-r4n" secondAttribute="bottom" constant="10" id="DJe-Yc-Zcd"/>
                             <constraint firstItem="fQJ-t8-r4n" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="GID-ME-bFc"/>
                             <constraint firstItem="1hc-ZU-nss" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="W1p-AS-zZe"/>

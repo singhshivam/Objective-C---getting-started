@@ -37,15 +37,41 @@
 
 // this function was declared in .h file
 -(IBAction)quoteButtonTapped:(id)sender {
-    // 1 - Get number of rows in array
-    int array_tot = [self.movieQuotes count];
-    // 2 - Get random index
-    int index = (arc4random() % array_tot);
-    // 3 - Get the quote string for the index
-    //NSString *my_quote = [self.myQuotes objectAtIndex:index];
-    NSString *my_quote = self.movieQuotes[index][@"quote"];
-    // 4 - Display the quote in the text view
-    self.quoteText.text = [NSString stringWithFormat:@"Quote:\n\n%@",  my_quote];
+    // 1 - Get personal quotes when the final segment is selected
+    if (self.quoteOpt.selectedSegmentIndex == 2) {
+        // 1 - Get number of rows in array
+        int array_tot = [self.myQuotes count];
+        // 2 - Get random index
+        int index = (arc4random() % array_tot);
+        // 3 - Get the quote string for the index
+        NSString *my_quote = self.myQuotes[index];
+        // 4 - Display the quote in the text view
+        self.quoteText.text = [NSString stringWithFormat:@"Quote:\n\n%@",  my_quote];
+    }
+    // 2 - Get movie quotes
+    else {
+        // 2.1 - determine category
+        NSString *selectedCategory = @"classic";
+        if (self.quoteOpt.selectedSegmentIndex == 1) {
+            selectedCategory = @"modern";
+        }
+        // 2.2 - filter array by category using predicate
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"category == %@", selectedCategory];
+        NSArray *filteredArray = [self.movieQuotes filteredArrayUsingPredicate:predicate];
+        // 2.3 - get total number in filtered array
+        int array_tot = [filteredArray count];
+        // 2.4 - as a safeguard only get quote when the array has rows in it
+        if (array_tot > 0) {
+            // 2.5 - get random index
+            int index = (arc4random() % array_tot);
+            // 2.6 - get the quote string for the index
+            NSString *quote = filteredArray[index][@"quote"];
+            self.quoteText.text = [NSString stringWithFormat:@"Movie Quote:\n\n%@",  quote];
+        } else {
+            self.quoteText.text = [NSString stringWithFormat:@"No quotes to display."];
+        }
+    }
+
 }
 
 
